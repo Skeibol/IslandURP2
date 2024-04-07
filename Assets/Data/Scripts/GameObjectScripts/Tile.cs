@@ -13,6 +13,7 @@ public class Tile : InGameObject
                 return;
             }
             numOfColliders += 1;
+            isOnObject = true;
         }
     }
     public override void OnTriggerExit2D(Collider2D other)
@@ -25,6 +26,9 @@ public class Tile : InGameObject
                 return;
             }
             numOfColliders -= 1;
+            if(numOfColliders == 0){
+                isOnObject = false;
+            }
         }
     }
 }

@@ -28,16 +28,8 @@ public class InGameObject : MonoBehaviour
         colliderInitialType = _collider.isTrigger;
 
     }
-    public virtual void FixedUpdate()
+    public virtual void Update()
     {
-        if (numOfColliders == 0)
-        {
-            isOnObject = false;
-        }
-        else
-        {
-            isOnObject = true;
-        }
         changeColorOnOccupied();
         //Debug.Log($"item {Name} initial collider is {colliderInitialType}");
         if (colliderInitialType == false)
@@ -62,6 +54,7 @@ public class InGameObject : MonoBehaviour
                 return;
             }
             numOfColliders += 1;
+            isOnObject = true;
         }
     }
     public virtual void OnTriggerExit2D(Collider2D other)
@@ -73,6 +66,9 @@ public class InGameObject : MonoBehaviour
                 return;
             }
             numOfColliders -= 1;
+            if(numOfColliders == 0){
+                isOnObject = false;
+            }
         }
     }
 

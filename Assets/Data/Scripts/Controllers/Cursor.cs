@@ -23,11 +23,11 @@ public class Cursor : MonoBehaviour
     }
     void FixedUpdate()
     {
-        if (isItemOnCursor)
+        if (isItemOnCursor && itemOnCursor is not null)
         {
-
-            isItemOverShit = itemOnCursor.GetComponent<InGameObject>().isOnObject;
+            handleCursorItemMove(itemOnCursor);
         }
+
 
     }
     void Update()
@@ -35,24 +35,28 @@ public class Cursor : MonoBehaviour
         var _mousePos = Input.mousePosition;
         _mousePos.z = 0;
         transform.position = _camera.ScreenToWorldPoint(_mousePos);
-
-        if (isItemOnCursor && itemOnCursor is not null)
+        if (isItemOnCursor)
         {
-            handleCursorItemMove(itemOnCursor);
+
+            isItemOverShit = itemOnCursor.GetComponent<InGameObject>().isOnObject;
         }
+
         if (Input.GetMouseButton(0) && isItemOnCursor && !isOverUI && !isItemOverShit && Time.time > timeElapsed)
         {
             placeItem();
             timeElapsed = Time.time + placementCooldown;
         }
 
-        if (Input.GetKeyDown(KeyCode.Q)){
-            
-            if(itemOnCursor is not null){
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+
+            if (itemOnCursor is not null)
+            {
                 itemOnCursor.SetActive(false);
             }
             destroyItemUnderCursor();
-            if(itemOnCursor is not null){
+            if (itemOnCursor is not null)
+            {
                 itemOnCursor.SetActive(true);
             }
         }
@@ -94,8 +98,9 @@ public class Cursor : MonoBehaviour
             return;
         }
         var prevItem = itemOnCursor;
-        itemOnCursor = Instantiate(_prefabOnCursor,GameObject.Find("World").transform);
+        itemOnCursor = Instantiate(_prefabOnCursor, GameObject.Find("World").transform);
         itemOnCursor.transform.position = getClampedGridPosition();
+
 
     }
 
@@ -114,7 +119,7 @@ public class Cursor : MonoBehaviour
 
     public Vector3 getClampedGridPosition()
     {
-        
+
         return new Vector3(Mathf.Ceil(cursorWorldPosition().x) - 1, Mathf.Ceil(cursorWorldPosition().y) - 1, 0);
     }
 
@@ -137,7 +142,7 @@ public class Cursor : MonoBehaviour
             Destroy(itemOnCursor);
         }
         _prefabOnCursor = _prefab;
-        var _item = Instantiate(_prefabOnCursor,GameObject.Find("World").transform);
+        var _item = Instantiate(_prefabOnCursor, GameObject.Find("World").transform);
         pickupItem(_item);
     }
 

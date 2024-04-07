@@ -51,7 +51,6 @@ MonoBehaviour:
   ObjectCategory: Tile
   Description: 
   isOnObject: 0
-  isOnCursor: 0
   colliderInitialType: 0
   numOfColliders: 0
 --- !u!61 &3119409022656752425
@@ -97,7 +96,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3, y: 3}
+  m_Size: {x: 3.8, y: 3.8}
   m_EdgeRadius: 0
 --- !u!50 &458740129089029637
 Rigidbody2D:
