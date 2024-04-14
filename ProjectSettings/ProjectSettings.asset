@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 26
-  productGUID: 806bc0354148d52409b96cf9196cb7b5
+  productGUID: 1fb727b198f17a146b9aeef44e139dab
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: Island3URP
+  productName: Procedural Gen
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -594,14 +594,14 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: Island3URP
+  metroPackageName: Procedural Gen
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: Island3URP
+  metroApplicationDescription: Procedural Gen
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0
@@ -669,10 +669,10 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: 1d46352f-4f4b-48ed-bcb6-c7a9927dd15b
+  cloudProjectId: 1c3bbbbc-4b40-4b2f-90c0-a886d7a9e850
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Island3URP
+  projectName: Procedural Gen
   organizationId: skeibor
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
