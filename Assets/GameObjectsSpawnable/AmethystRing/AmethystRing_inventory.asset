@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ace418102b802846b949ce01532302f, type: 3}
+  m_Name: AmethystRing_inventory
+  m_EditorClassIdentifier: 
+  Name: amethyst ring
+  ID: 7
+  inventorySprite: {fileID: 21300000, guid: ec4c3180670870443b5c78b832db54f6, type: 3}
+  worldGameObject: {fileID: 3654856226817215280, guid: 65f4ce6d246a432419caea82954733db, type: 3}
+  groundObject: {fileID: 5999870489178778687, guid: 37303ff10689db748abbb06b20851d84, type: 3}
+  stackSize: 1
+  canBeCrafted: 0
+  requirements:
+  - {fileID: 11400000, guid: c24f521b802bd164abc1047fbb4aa73c, type: 2}
+  - {fileID: 11400000, guid: c24f521b802bd164abc1047fbb4aa73c, type: 2}
+  - {fileID: 11400000, guid: 3f91f0a03ba5aa443820cc93f009a42a, type: 2}
+  isPlaceable: 0
+  canBeEquipped: 0
+  isEquipped: 0
+  itemStats:
+    list: []
+    keyCollision: 0

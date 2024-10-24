@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ace418102b802846b949ce01532302f, type: 3}
+  m_Name: CraftingBench_inventory
+  m_EditorClassIdentifier: 
+  Name: craftingbench
+  ID: 15
+  inventorySprite: {fileID: 21300000, guid: b3f120743ff950646896a459fc1e3810, type: 3}
+  worldGameObject: {fileID: 4162253863554010731, guid: 3badb33821aea6847b5937a487270fc9, type: 3}
+  groundObject: {fileID: 5999870489178778687, guid: 88cac7f4254208d4b97d0115daa11a54, type: 3}
+  weaponObject: {fileID: 0}
+  stackSize: 1
+  canBeCrafted: 1
+  requiresBench: 0
+  requirements:
+  - {fileID: 11400000, guid: 74638d9f7f7257a41bc95cc0eaa3edee, type: 2}
+  - {fileID: 11400000, guid: 74638d9f7f7257a41bc95cc0eaa3edee, type: 2}
+  isPlaceable: 1
+  isWeapon: 0
+  canBeEquipped: 0
+  isEquipped: 0
+  itemStats:
+    list: []
+    keyCollision: 0

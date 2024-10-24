@@ -1,0 +1,33 @@
+﻿--- Main camera
+    - Pixel size / Render size / UI scale
+    - WORLD SCALE!
+--- Lights
+    - Scene lightning / Shaders based on time of day / Pixel lightning for items and other
+--- World
+    - Caves - Everything
+    - Better noise generation - Stacking noisemaps ++
+    - Biomes ++
+    - Water shader / ground shader / make things pretty
+    - New sprites - Nabavi pixel artista koji zeli radit za nista (AI?)
+--- Chunks
+    - Add nicer distance checking (diagonal problem) ++
+    - Add "needs generation" to chunks ++
+--- Gameplay
+    - MUSIC
+    - COMBAT - Weapon swing cone n shit +
+    - Player equipment / stats +
+    - Enemy DROPS +
+    - Crafting system improve
+    - Minimap - Render mode on WorldGenerator +
+--- Inventory
+    - Drop shit on ground +
+    - Fix dogshit UI looks
+    - Custom stack size
+    - Rework inventory - inventory UI relation 
+    - Quick Bar / Action bar
+    
+--- Skripte
+    - Cursor class pogledaj šta koji kurac unutra uopće - Sprite cursora je ogavan
+    - WorldGenerator.cs - Fill array by dimensions - custom padding ++
+    
+    

@@ -1,18 +1,26 @@
+using System;
+using System.Collections;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
   public float speed;
+  public float damageRecovery;
   public int bodyDirection;
   private Rigidbody2D _rigidBody;
   private Animator _animator;
   public float harvestCooldown;
   public Cursor _cursor;
   private float _lastHarvestTime;
-  public bool isAttacking = false;
-
+  public bool isDamaged = false;
+  public bool facingRight = false;
+  public Inventory _inventory;
   private SpriteRenderer _spriteRenderer;
+  public WeaponHandle WeaponHandle;
 
+
+  public GameObject lamp;
   // Start is called before the first frame update
   void Start()
   {
@@ -26,22 +34,51 @@ public class PlayerController : MonoBehaviour
   // Update is called once per frame
   void Update()
   {
-    if (Input.GetMouseButton(0) && _lastHarvestTime < Time.time && _cursor.isCursorInAOE()) {
+    if (Input.GetKeyDown(KeyCode.G)) {
+      if (lamp.activeSelf) {
+        lamp.SetActive(false);
+      }
+      else {
+        lamp.SetActive(true);
+      }
+    }
+    
+    if (!_inventory.isInventoryOpen) {
+      if (!_cursor.isItemOnCursor) {
+        if (Input.GetMouseButton(0) && _lastHarvestTime < Time.time) {
+          _rigidBody.velocity = Vector2.zero;
+          //isAttacking = true;
+          if (_inventory.isWeaponEquipped) {
+            WeaponHandle.swingHand();
+          }
+
+          _lastHarvestTime = Time.time + harvestCooldown;
+        }
+
+        if (Input.GetMouseButtonDown(1)) {
+          _cursor.hitItemUnderCursor(500);
+        }
+      }
+      else {
+        if (Input.GetMouseButtonDown(1)) {
+          _cursor.handleCursorItemPlacement();
+        }
+      }
+
+
+      if (!isDamaged) {
+        handlePhysicsMovement();
+      }
+    }
+    else {
       _rigidBody.velocity = Vector2.zero;
-      isAttacking = true;
-      _cursor.hitItemUnderCursor();
-      _lastHarvestTime = Time.time + harvestCooldown;
-    }
-    else if(Input.GetMouseButtonUp(0)) {
-      isAttacking = false;
-    }
-    else if(!isAttacking){
-      handlePhysicsMovement();
     }
 
     getBodyDirection();
     handleAnimations();
   }
+
+  
 
   void handlePhysicsMovement()
   {
@@ -50,25 +87,25 @@ public class PlayerController : MonoBehaviour
 
     Vector3 direction = new Vector3(hor, vert, 0f);
     direction.Normalize();
-    _rigidBody.velocity = new Vector3(direction.x * speed, direction.y * speed, 0);
+    _rigidBody.velocity = new Vector3(direction.x * PlayerStats.Instance.GetStat("speed"),
+      direction.y * PlayerStats.Instance.GetStat("speed"), 0);
   }
 
   void getBodyDirection()
   {
-    if (Input.GetAxisRaw("Horizontal") > 0) {
-      bodyDirection = 0;
-      _spriteRenderer.flipX = false;
+    var cursorX = _cursor.cursorLocalPosition().x;
+    if (cursorX > Screen.width / 2f && facingRight) {
+      transform.Rotate(0f, 180f, 0f);
+      facingRight = false;
     }
-    else if (Input.GetAxisRaw("Horizontal") < 0) {
-      bodyDirection = 1;
-      _spriteRenderer.flipX = true;
+    else if (cursorX < Screen.width / 2f && !facingRight) {
+      transform.Rotate(0f, -180f, 0f);
+      facingRight = true;
     }
   }
 
   void handleAnimations()
   {
-    _animator.SetBool("isAttacking",isAttacking);
-
     if (_rigidBody.velocity.x != 0 || _rigidBody.velocity.y != 0) {
       _animator.SetInteger("speedLevel", 1);
     }
@@ -77,5 +114,20 @@ public class PlayerController : MonoBehaviour
     }
   }
 
+  private void OnCollisionEnter2D(Collision2D other)
+  {
+    if (other.gameObject.CompareTag("Enemy")) {
+      StartCoroutine(TakingDamage());
+      _rigidBody.AddForce((transform.position - other.transform.position) * 700f);
+    }
+  }
 
+  public IEnumerator TakingDamage()
+  {
+    isDamaged = true;
+
+    yield return new WaitForSeconds(damageRecovery);
+
+    isDamaged = false;
+  }
 }

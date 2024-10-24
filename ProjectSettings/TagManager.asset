@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - weapon
+  - Enemy
+  - player
+  - tree
   layers:
   - Default
   - TransparentFX
@@ -11,7 +15,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - obstacle
   - 
   - 
   - 
@@ -38,8 +42,14 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Caves
+    uniqueID: 3209485215
+    locked: 0
   - name: GroundTIles
     uniqueID: 2085302777
+    locked: 0
+  - name: House
+    uniqueID: 4228624669
     locked: 0
   - name: Default
     uniqueID: 0

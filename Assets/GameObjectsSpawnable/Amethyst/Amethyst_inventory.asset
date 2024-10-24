@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ace418102b802846b949ce01532302f, type: 3}
+  m_Name: Amethyst_inventory
+  m_EditorClassIdentifier: 
+  Name: amethyst
+  ID: 6
+  inventorySprite: {fileID: 21300000, guid: 5347819a904139d4fa99ff1dec6c01d8, type: 3}
+  worldGameObject: {fileID: 2464137001829623055, guid: 9151d25a6b292d946aba9399a3a7d0ba, type: 3}
+  groundObject: {fileID: 5999870489178778687, guid: be4a026f5d36a5347aa207174fb2eb65, type: 3}
+  stackSize: 2
+  canBeCrafted: 0
+  requirements: []
+  isPlaceable: 0
+  canBeEquipped: 0
+  isEquipped: 0
+  itemStats:
+    list: []
+    keyCollision: 0

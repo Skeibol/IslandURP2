@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ace418102b802846b949ce01532302f, type: 3}
+  m_Name: Woodcutter_inventory
+  m_EditorClassIdentifier: 
+  Name: woodcutter
+  ID: 20
+  inventorySprite: {fileID: 0}
+  worldGameObject: {fileID: 638024501246434298, guid: b9a249533f620fc4590e5b92be26666b, type: 3}
+  stackSize: 1
+  requiresBench: 0
+  requirements: []
+  isPlaceable: 1
+  groundObject: {fileID: 5999870489178778687, guid: 94f75dfc72860b9499a85a2f2b7875c6, type: 3}
+  canBeEquipped: 0
+  isWeapon: 0
+  weaponObject: {fileID: 0}
+  itemStats:
+    list: []
+    keyCollision: 0
+  canBeCrafted: 1

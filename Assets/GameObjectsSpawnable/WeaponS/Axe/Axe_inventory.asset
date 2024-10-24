@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ace418102b802846b949ce01532302f, type: 3}
+  m_Name: Axe_inventory
+  m_EditorClassIdentifier: 
+  Name: axe
+  ID: 3
+  inventorySprite: {fileID: 21300000, guid: 802d04aa3c9217e4c9f5279acf5dc719, type: 3}
+  worldGameObject: {fileID: 8031478598349566059, guid: 1a39f7266bda7704ba73bea0b70b13db, type: 3}
+  stackSize: 1
+  requiresBench: 0
+  requirements:
+  - {fileID: 11400000, guid: 0d519be708f14a742b2e7a67e1361d36, type: 2}
+  - {fileID: 11400000, guid: 74638d9f7f7257a41bc95cc0eaa3edee, type: 2}
+  - {fileID: 11400000, guid: 74638d9f7f7257a41bc95cc0eaa3edee, type: 2}
+  isPlaceable: 0
+  groundObject: {fileID: 5999870489178778687, guid: bdc4a2531eee0484eaee67f9954de420, type: 3}
+  canBeEquipped: 1
+  isWeapon: 1
+  weaponObject: {fileID: 7444781539931617282, guid: 99d0dbdbd4ddc7e45b34f3c77aa0eb60, type: 3}
+  itemStats:
+    list:
+    - Key: attackDamage
+      Value: 20
+    - Key: harvestDamage
+      Value: 20
+    - Key: speed
+      Value: 2
+    keyCollision: 0
+  canBeCrafted: 0
